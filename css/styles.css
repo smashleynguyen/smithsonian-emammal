@@ -1,0 +1,61 @@
+/* Style.css */
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ===========
+   Desktop CSS
+   =========== */
+
+body {
+  font-family: 'Chivo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: auto 0;
+  width: 100%;
+  display: block;
+}
+
+#container {
+  width: 100%;
+  text-align: center;
+}
+
+header {
+  background-color: #f0987c;
+  width: 100%;
+  height: 150px;
+}
+
+.logo {
+  padding-left: 45%;
+  padding-top: 20px;
+}
+
+main {
+  width: 50%;
+  float: left;
+}
+
+section {
+  width: 50%;
+  float: right;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
