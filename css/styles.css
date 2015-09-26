@@ -69,6 +69,22 @@ h1 {
    font-size: 60px;
 }
 
+.india {
+   position: absolute;
+   top: 90px;
+   left: 0;
+   width: 100%;
+   font-size: 60px;
+}
+
+.us-peru {
+   position: absolute;
+   top: 105px;
+   left: 0;
+   width: 100%;
+   font-size: 60px;
+}
+
 h1 span {
    color: black;
    font-family: 'Chivo', sans-serif;
