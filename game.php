@@ -5,7 +5,7 @@
   <?php include 'spotname.php';?>
   
   <!-- php vars -->
-  <?php $Record = $_GET["page"]; //$answer = getname($Record, "Right"); ?>
+  <?php $Record = $_GET["page"]; ?>
 
   <style type="text/css">
     .large_main {
@@ -150,58 +150,25 @@
   ?> >
               <div id='refAButton' class='col-md-2 btn-group-vertical' role='group' aria-label='refAButtons'>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=1 class="btn btn-default">$100</button>
+                <button type="button" class="btn btn-bets" onClick="calcScore(100, '1', time, '<?php echo getname($Record, "Right"); ?>')">$100</button>
                 </div>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=2 class="btn btn-default">$50</button>
+                <button type="button" class="btn btn-bets" onClick="calcScore(50, '1', time, '<?php echo getname($Record, "Right"); ?>')">$50</button>
                 </div>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=3 class="btn btn-default">$10</button>
+                <button type="button" class="btn btn-bets" onClick="calcScore(10, '1', time, '<?php echo getname($Record, "Right"); ?>')">$10</button>
               </div>
-<!-- =======
-
-
-              <div id='refAButton' class='col-md-2'>
-                <div class='btn-group-vertical' role='group' aria-label='refAButtons'>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(100, 'A', time, '<?php echo $answer?>', <?php echo $user?>)">$100</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(80, 'A', time, '<?php echo $answer?>')">$80</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(60, 'A', time, '<?php echo $answer?>')">$60</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(40, 'A', time, '<?php echo $answer?>')">$40</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(20, 'A', time, '<?php echo $answer?>')">$20</button>
-                  </div>
               </div>
->>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
-              </div>
-
-</form>
             </div>
 
             <div id='pass' class='row'>
-              <form action="game.php" method="post">
               <div class='col-md-10'></div>
               <div id='passButton' class='col-md-2 btn-group-vertical' role='group' aria-label='passButtons'>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=4 formmethod="post" formaction="game.php" class="btn btn-default">PASS</button>
-              </div>
-<!-- =======
-              <div id='passButton' class='col-md-2'>
-              <div class='btn-group-vertical' role='group' aria-label='passButtons'>
-                <div class="button-decoration">
-                  <button type="button" class="btn btn-pass" onClick="calcScore(0, 'Pass', time, '<?php echo $answer?>')">Pass</button>
+                <button type="button" class="btn btn-bets" onClick="calcScore(100, 'Pass', time, '<?php echo getname($Record, "Right"); ?>')">PASS</button>
                 </div>
+
               </div>
->>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
-              </div>
-            </form>
             </div>
 
             <div id='refB' class='row'>
@@ -211,55 +178,24 @@
                 <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive small">
                 <button id="popover" type="button" class="btn btn-primary info" data-toggle="popover" data-placement="top" title="About this animal ... " data-content="<?php getname($Record, "R2_Info"); ?>" ><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
               </div>
-<!-- =======
-              <div id='refBImage' class='col-md-10'>
-                <div class="container">
-                  <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive">
-                </div>
->>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
               </div>
-    <form action="game.php" method="post">
-<input type='hidden' name="page" value=<?php $page++ ?> >
+
               <div id='refBButton' class='col-md-2'>
                 <div class='btn-group-vertical' role='group' aria-label='refBButtons'>
                   <div class="button-decoration">
-                  <button type="submit" name='choice' value=5 formmethod="post" formaction="game.php" class="btn btn-default">$10</button>
+                    <button type="button" class="btn btn-bets" onClick="calcScore(10, '2', time, '<?php echo getname($Record, "Right"); ?>')">$10</button>
                   </div>
                   <div class="button-decoration">
-                  <button type="submit" name='choice' value=6 formmethod="post" formaction="game.php" class="btn btn-default">$50</button>
+                    <button type="button" class="btn btn-bets" onClick="calcScore(50, '2', time, '<?php echo getname($Record, "Right"); ?>')">$50</button>
                   </div>
                   <div class="button-decoration">
-                  <button type="submit" name='choice' value=7 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                    <button type="button" class="btn btn-bets" onClick="calcScore(100, '2', time, '<?php echo getname($Record, "Right"); ?>')">$100</button>
                 </div>
-<!-- =======
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(100, 'B', time, '<?php echo $answer?>')">$100</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(80, 'B', time, '<?php echo $answer?>')">$80</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(60, 'B', time, '<?php echo $answer?>')">$60</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(40, 'B', time, '<?php echo $answer?>')">$40</button>
-                  </div>
-                  <div class="button-decoration">
-                    <button type="button" class="btn btn-bets" onClick="calcScore(20, 'B', time,'<?php echo $answer?>')">$20</button>
-                  </div>
->>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
                 </div>
               </div>
     </form>
             </div>
           </div>
-<!-- <<<<<<< HEAD
-=======
-
-          <div class='col-md-1'></div>
-      </div>
-
->>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
 
       <div id='avatar' class='row'>
         <div class="col-md-2"></div>
@@ -268,7 +204,14 @@
             <h3>Randi</h3>
             <img class="game-avatar" src="images/avatar/avatar-girl-2.png">
             <div class="row">
-                <div class="col-xs-4"><h4>Score:</h4><br><h3>$50</h3></div>
+                <div class="col-xs-4"><h4>Score:</h4><br><h3>
+                  <?php $score=  $_GET["score"];
+
+                   echo $score
+                   ?>
+
+
+                </h3></div>
                 <div class="col-xs-4"><h4>Items:</h4><br><h3>1 free pass</h3></div>
                 <div class="col-xs-4"><h4>Level:</h4><br><h3>Level 3</h3></div>
             </div>
@@ -295,7 +238,7 @@
   });
     var time  = clock.getTime();
 
-  function calcScore(points, response, time, answer, user) {
+  function calcScore(points, response, time, answer) {
     if (response == answer) {
     var score = 1*points*time;
   } else if (response != answer) {
@@ -303,6 +246,11 @@
   } else if (response == 'Pass') {
     var score = 0;
   }
+  var old = <?php echo $_GET["score"] ?>;
+  var newScore = old + score;
+  var page = Math.floor((Math.random() * 3) + 1);
+
+  window.location.href = "http://localhost:8888/smithsonian-emammal/game.php?page=" + page + "&score=" + newScore;
 }
 
   $(document).ready(function(){
