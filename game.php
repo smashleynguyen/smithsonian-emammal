@@ -43,13 +43,14 @@
           <div class="game-logo">
             <a href="index.html"><img src="images/spotornot.png" alt="spotornot logo" height="120px" width="160px"></a>
           </div>
+
+
+          <div id="timer" class="row">
+            <div class='col-md-2'><span class='countdown'></span></div>
+          </div>
+
         </header>
     <?php $answer = 'A'; ?>
-      <div id='timer' class='row'>
-        <div class='col-md-5'></div>
-        <div class='col-md-2'><span class='countdown'></span></div>
-        <div class='col-md-5'></div>
-      </div>
 
       <div id='photos' class='row'>
           <div class='col-md-1'></div>
@@ -68,11 +69,21 @@
 
               <div id='refAButton' class='col-md-2'>
                 <div class='btn-group-vertical' role='group' aria-label='refAButtons'>
-                <button type="button" class="btn btn-bets" onClick="calcScore(100, 'A', time, '<?php echo $answer?>', <?php echo $user?>)">$100</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(80, 'A', time, '<?php echo $answer?>')">$80</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(60, 'A', time, '<?php echo $answer?>')">$60</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(40, 'A', time, '<?php echo $answer?>')">$40</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(20, 'A', time, '<?php echo $answer?>')">$20</button>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(100, 'A', time, '<?php echo $answer?>', <?php echo $user?>)">$100</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(80, 'A', time, '<?php echo $answer?>')">$80</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(60, 'A', time, '<?php echo $answer?>')">$60</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(40, 'A', time, '<?php echo $answer?>')">$40</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(20, 'A', time, '<?php echo $answer?>')">$20</button>
+                  </div>
               </div>
               </div>
             </div>
@@ -81,7 +92,9 @@
               <div class='col-md-10'></div>
               <div id='passButton' class='col-md-2'>
               <div class='btn-group-vertical' role='group' aria-label='passButtons'>
-                <button type="button" class="btn btn-pass" onClick="calcScore(0, 'Pass', time, '<?php echo $answer?>')">Pass</button>
+                <div class="button-decoration">
+                  <button type="button" class="btn btn-pass" onClick="calcScore(0, 'Pass', time, '<?php echo $answer?>')">Pass</button>
+                </div>
               </div>
               </div>
             </div>
@@ -95,11 +108,21 @@
 
               <div id='refBButton' class='col-md-2'>
                 <div class='btn-group-vertical' role='group' aria-label='refBButtons'>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(100, 'B', time, '<?php echo $answer?>')">$100</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(80, 'B', time, '<?php echo $answer?>')">$80</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(60, 'B', time, '<?php echo $answer?>')">$60</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(40, 'B', time, '<?php echo $answer?>')">$40</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(20, 'B', time,'<?php echo $answer?>')">$20</button>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(100, 'B', time, '<?php echo $answer?>')">$100</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(80, 'B', time, '<?php echo $answer?>')">$80</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(60, 'B', time, '<?php echo $answer?>')">$60</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(40, 'B', time, '<?php echo $answer?>')">$40</button>
+                  </div>
+                  <div class="button-decoration">
+                    <button type="button" class="btn btn-bets" onClick="calcScore(20, 'B', time,'<?php echo $answer?>')">$20</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -111,13 +134,16 @@
 
 
       <div id='avatar' class='row'>
-        <div class='col-md-2'></div>
+        <div class="col-md-2"></div>
         <div class='panel panel-default col-md-8'>
           <div class="panel-body">
-            <p>Name: <?php getUser($user, 'Name'); ?> </p>
-              <p><?php getUser($user, 'Score'); ?></p>
-              <p><?php getUser($user, 'Items'); ?></p>
-              <p><?php getUser($user, 'Level'); ?></p>
+            <h3>Randi<?php getUser($user, 'Name'); ?> </h3>
+            <img class="game-avatar" src="images/avatar/avatar-girl-2.png">
+            <div class="row">
+                <div class="col-xs-4"><h4>Score:</h4><br><h3>$50<?php getUser($user, 'Score'); ?></h3></div>
+                <div class="col-xs-4"><h4>Items:</h4><br><h3>1 free pass<?php getUser($user, 'Items'); ?></h3></div>
+                <div class="col-xs-4"><h4>Level:</h4><br><h3>Level 3<?php getUser($user, 'Level'); ?></h3></div>
+            </div>
           </div>
         </div>
         <div class='col-md-2'></div>
