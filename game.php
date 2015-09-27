@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>eMammal Spot or Not</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +13,10 @@
     <!--Custom styles -->
 	<link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/flipclock.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="css/styles.css" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Chivo:400,400italic,900,900italic' rel='stylesheet' type='text/css'>
 
   <!--php includes-->
   <?php include 'spotname.php';?>
@@ -27,7 +31,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+    <body>
+      <div id="containter">
+        <header class="clearfix">
+          <div class="game-logo">
+            <a href="index.html"><img src="images/spotornot.png" alt="spotornot logo" height="120px" width="160px"></a>
+          </div>
+        </header>
     <?php $answer = 'A'; ?>
       <div id='timer' class='row'>
         <div class='col-md-5'></div>
@@ -37,15 +47,17 @@
 
       <div id='photos' class='row'>
           <div class='col-md-1'></div>
-          
+
           <div id='mainPhoto' class='col-md-6'>
-            <img src='<?php getname($Record, "C_FileName"); ?>.jpg' class="img-responsive"> 
+            <img src='<?php getname($Record, "C_FileName"); ?>.jpg' class="img-responsive">
           </div>
-          
+
           <div id='choices' class='col-md-4'>
             <div id='refA' class='row'>
               <div id='refAImage' class='col-md-10'>
-                <img src='<?php getname($Record, "R1_FileName"); ?>.jpg' class="img-responsive">
+                <div class="container">
+                  <img src='<?php getname($Record, "R1_FileName"); ?>.jpg' class="img-responsive">
+                </div>
               </div>
 
               <div id='refAButton' class='col-md-2'>
@@ -70,7 +82,9 @@
 
             <div id='refB' class='row'>
               <div id='refBImage' class='col-md-10'>
-                <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive">
+                <div class="container">
+                  <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive">
+                </div>
               </div>
 
               <div id='refBButton' class='col-md-2'>
@@ -85,7 +99,7 @@
             </div>
 
           </div>
-          
+
           <div class='col-md-1'></div>
       </div>
 
@@ -118,7 +132,7 @@
       clock.decrement();
     }, 1000);
   });
-    var time  = clock.getTime(); 
+    var time  = clock.getTime();
 
   function calcScore(points, response, time, answer, user) {
     var ajaxRequest;
@@ -154,11 +168,17 @@
   } else if (response == 'Pass') {
     var score = 0;
   }
-  
+
   ajaxRequest.open("GET", "dbUpdate.php" + "?score=" + score + "&user='" + user, true);
-  ajaxRequest.send(null); 
+  ajaxRequest.send(null);
 }
 </script>
-
+  </div>
   </body>
+  <footer>
+    <div class="logo2">
+      <img src="images/emammal_LOGO_original.png" alt="emammal" height="100" width="170">
+    </div>
+      <p class="footer-text"><a href="http://emammal.si.edu/">eMammal | See wildlife. Do science.</a></p>
+  </footer>
 </html>
