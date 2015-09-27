@@ -173,12 +173,13 @@ h4 {
   font-weight: 300;
   padding-left: 10px;
   padding-top: 10px;
+  padding-right: 10px;
   line-height: 1.2;
 }
 
 .avatar-people {
   padding-left: 10px;
-  float: left;
+  text-align: center;
 }
 
 .avatar-people-2 {
@@ -187,8 +188,7 @@ h4 {
 }
 
 .avatar-button {
-  padding-top: 75px;
-  float: none;
+  float: left;
 }
 
 .avatar-box {
@@ -288,10 +288,6 @@ h4 {
 .col-xs-4 {
   width: 28%;
   text-align: center;
-}
-
-.btn btn-bets {
-  background-color: #f6c994;
 }
 
 .button-decoration {
