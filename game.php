@@ -5,7 +5,7 @@
   <?php include 'spotname.php';?>
   
   <!-- php vars -->
-  <?php $Record = $_GET["page"]; $answer = getname($Record, "Right"); ?>
+  <?php $Record = $_GET["page"]; //$answer = getname($Record, "Right"); ?>
 
   <style type="text/css">
     .large_main {
@@ -77,6 +77,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
 
@@ -116,6 +118,8 @@
             <div class="large_main"></div>
           <div class="container_main">
             <img src='<?php getname($Record, "C_FileName"); ?>.jpg' class="img-responsive small">
+            <button id="popover" type="button" class="btn btn-primary info" data-toggle="popover" data-placement="top" title="About" data-content="<?php getname($Record, "C_Info"); ?>" ><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
           </div>
           </div>
 
@@ -125,12 +129,12 @@
                 <div class="large_ref1"></div>
                 <div class="container">
                 <img src='<?php getname($Record, "R1_FileName"); ?>.jpg' class="img-responsive small">
+                <button id="popover" type="button" class="btn btn-primary info" data-toggle="popover" data-placement="top" title="About this animal ... " data-content="<?php getname($Record, "R1_Info"); ?>" ><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
               </div>
               </div>
 
 
 <form action="game.php" method="post">
-<input type="hidden" name="page" value="1">
               <div id='refAButton' class='col-md-2 btn-group-vertical' role='group' aria-label='refAButtons'>
                 <div class="button-decoration">
                 <button type="submit" name='choice' value=1 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
@@ -192,6 +196,7 @@
                 <div class="large_ref2"></div>
                 <div class="container">
                 <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive small">
+                <button id="popover" type="button" class="btn btn-primary info" data-toggle="popover" data-placement="top" title="About this animal ... " data-content="<?php getname($Record, "R2_Info"); ?>" ><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
               </div>
 <!-- =======
               <div id='refBImage' class='col-md-10'>
@@ -258,11 +263,13 @@
         <div class='col-md-2'></div>
       </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/flipclock.min.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#popover').popover();   
+});
+
     var clock = $('.countdown').FlipClock(20,{
       clockFace: 'Counter'
 });
