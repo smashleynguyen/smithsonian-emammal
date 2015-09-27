@@ -134,16 +134,29 @@
               </div>
 
 
-<form action="game.php" method="post">
+<form action="game.php" method="get">
+  <input type='hidden' name="page" value= 
+  <?php 
+
+  $temp = $_GET["page"];
+  $temp_2 = (int)$temp;
+  $temp_2++; 
+
+  if ($temp_2 > 3) {
+    echo 1;
+  } else {
+  echo $temp_2;
+  }
+  ?> >
               <div id='refAButton' class='col-md-2 btn-group-vertical' role='group' aria-label='refAButtons'>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=1 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                <button type="submit" name='choice' value=1 class="btn btn-default">$100</button>
                 </div>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=2 formmethod="post" formaction="game.php" class="btn btn-default">$50</button>
+                <button type="submit" name='choice' value=2 class="btn btn-default">$50</button>
                 </div>
                 <div class="button-decoration">
-                <button type="submit" name='choice' value=3 formmethod="post" formaction="game.php" class="btn btn-default">$10</button>
+                <button type="submit" name='choice' value=3 class="btn btn-default">$10</button>
               </div>
 <!-- =======
 
@@ -206,6 +219,7 @@
 >>>>>>> 2f8443fd92df3295237c4d7be3140a8c652fb820 -->
               </div>
     <form action="game.php" method="post">
+<input type='hidden' name="page" value=<?php $page++ ?> >
               <div id='refBButton' class='col-md-2'>
                 <div class='btn-group-vertical' role='group' aria-label='refBButtons'>
                   <div class="button-decoration">
