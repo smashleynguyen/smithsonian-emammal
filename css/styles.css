@@ -136,7 +136,6 @@ h1 span.spacer {
 /*avatar page CSS*/
 
 .col-md-8 {
-  padding-top: 20px;
   padding-left: 10px;
   padding-bottom: 10px;
 }
@@ -278,7 +277,7 @@ h4 {
   border-color: black;
 }
 
-.btn-bet {
+.btn-bets {
   background-color: #f0987c;
   color: black;
   border-color: black;
