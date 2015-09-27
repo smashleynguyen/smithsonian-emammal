@@ -9,8 +9,20 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <link href='https://fonts.googleapis.com/css?family=Chivo:400,400italic,900,900italic' rel='stylesheet' type='text/css'>
+    <script src="https://code.createjs.com/soundjs-0.6.1.min.js"></script>
+    <script>
+      var soundID = "Thunder";
+
+      function loadSound () {
+        createjs.Sound.registerSound("Canary song.wav", soundID);
+      }
+
+      function playSound () {
+        createjs.Sound.play(soundID);
+      }
+    </script>
   </head>
-  <body>
+  <body onload="playSound();">
     <div id="containter">
       <header class="clearfix">
         <div class="logo">
