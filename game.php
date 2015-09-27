@@ -96,15 +96,15 @@
     <![endif]-->
   </head>
   <body>
-      <div id="containter">
+      <div id="container">
         <header class="clearfix">
           <div class="game-logo">
             <a href="index.html"><img src="images/spotornot.png" alt="spotornot logo" height="120px" width="160px"></a>
           </div>
 
 
-          <div id="timer" class="row">
-            <div class='col-md-2'><span class='countdown'></span></div>
+          <div id="timer">
+            <div class='countdown'></div>
           </div>
 
         </header>
@@ -114,7 +114,9 @@
 
           <div id='mainPhoto' class='col-md-6 magnify_main'>
             <div class="large_main"></div>
+          <div class="container_main">
             <img src='<?php getname($Record, "C_FileName"); ?>.jpg' class="img-responsive small">
+          </div>
           </div>
 
           <div id='choices' class='col-md-4'>
