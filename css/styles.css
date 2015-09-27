@@ -213,6 +213,23 @@ h4 {
   padding-top: 10px;
 }
 
+/*game page CSS*/
+
+.game-logo {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.container {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.container img {
+    width: 100%;
+}
 
 footer {
   width: 100%;
