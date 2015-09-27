@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Style.css */
 * {
   box-sizing: border-box;
@@ -58,6 +57,11 @@ main {
   padding-bottom: 10px;
 }
 
+.btn-start {
+  background-color: #f7b669;
+  border-color: black;
+}
+
 section {
   width: 100%;
   text-align: center;
@@ -74,6 +78,11 @@ h1 {
    left: 0;
    width: 100%;
    font-size: 60px;
+}
+
+.instructions {
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .india {
@@ -129,13 +138,13 @@ h1 span.spacer {
 .col-md-8 {
   padding-top: 20px;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .col-xs-6 {
   padding-top: 20px;
   width: 32%;
   height: 500px;
-  text-align: center;
 }
 
 .stats {
@@ -156,6 +165,7 @@ h3 {
   font-size: 25px;
   padding-bottom: 10px;
 }
+
 
 h4 {
   font-weight: 500px;
@@ -184,15 +194,15 @@ h4 {
 
 .avatar-people-2 {
   padding-left: 10px;
-  float: left;
+  text-align: center;
 }
 
 .avatar-button {
-  float: left;
+  padding-bottom: 10px;
 }
 
 .avatar-box {
-  height: 500px;
+  height: 620px;
   width: 100%;
   background-color: #f6c994;
   margin-left: 15px;
@@ -258,6 +268,20 @@ h4 {
   width:500px;
 }
 
+.btn-primary {
+  background-color: #f6c994;
+  color: black;
+  border-color: black;
+}
+
+.btn-bet {
+  background-color: #f0987c;
+  color: black;
+  border-color: black;
+  text-shadow: none;
+  font-size: 24px;
+}
+
 
 .container .info {
     position:absolute;
@@ -268,8 +292,9 @@ h4 {
 }
 
 #refBButton, #refAButton {
-  float:right;
-  padding-top: 20px;
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-right: 20px;
 }
 
@@ -283,17 +308,25 @@ h4 {
 
 .game-avatar {
   float: left;
+  padding-left: 20px;
+}
+
+.avatar-name {
+  text-align: left;
 }
 
 .col-xs-4 {
-  width: 28%;
-  text-align: center;
+  width: 26%;
+  /*text-align: center;*/
 }
 
 .button-decoration {
   padding: 5px;
 }
 
+a.button:hover{
+     background-color: #f7b669;
+}
 
 
 footer {

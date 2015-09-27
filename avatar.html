@@ -72,7 +72,13 @@
                     <h2>$0</h2>
                   <h4>Items</h4>
                       <h2>-</h2>
-                  <button type="button" class="btn btn-default"><a href="#"><h3>Begin quest!</h3></a></button>
+                  <form action="game.php" method="get">
+                      <input type="hidden" name="page" value="1">
+                      <input type="hidden" name="score" value="0">
+                      <input type="hidden" name="answer" value="1">
+                  <button type="button" class="btn btn-default"><a href="game.php"><h3>Begin quest!</h3></a>
+                  </button>
+                </form>
                 </div>
           </div>
       </main>
@@ -83,7 +89,9 @@
   </body>
   <footer>
     <div class="logo2">
-      <img src="images/emammal_LOGO_original.png" alt="emammal" height="100" width="170">
+      <a href="http://emammal.si.edu/">
+        <img src="images/emammal_LOGO_original.png" alt="emammal" height="100" width="170">
+      </a>
     </div>
     <p class="footer-text"><a href="http://emammal.si.edu/">eMammal | See wildlife. Do science.</a></p>
   </footer>
