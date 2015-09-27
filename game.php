@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Spot or Not?</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,14 +17,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <!--Custom styles -->
-	<link href="css/style.css" rel="stylesheet">
+	<!--<link href="css/style.css" rel="stylesheet">-->
   <link rel="stylesheet" href="css/flipclock.css">
 
   <!--php includes-->
   <?php include 'spotname.php';?>
-
-  <!-- php vars -->
-  <?php $Record = 2; $user = 1; ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +31,9 @@
     <![endif]-->
   </head>
   <body>
-    <?php $answer = 'A'; ?>
+  <!-- php vars -->
+  <?php $Record = $_GET["page"]; $answer = getname($Record, "Right"); ?>
+
       <div id='timer' class='row'>
         <div class='col-md-5'></div>
         <div class='col-md-2'><span class='countdown'></span></div>
@@ -54,56 +53,52 @@
                 <img src='<?php getname($Record, "R1_FileName"); ?>.jpg' class="img-responsive">
               </div>
 
-              <div id='refAButton' class='col-md-2'>
-                <div class='btn-group-vertical' role='group' aria-label='refAButtons'>
-                <button type="button" class="btn btn-bets" onClick="calcScore(100, 'A', time, '<?php echo $answer?>', <?php echo $user?>)">$100</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(80, 'A', time, '<?php echo $answer?>')">$80</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(60, 'A', time, '<?php echo $answer?>')">$60</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(40, 'A', time, '<?php echo $answer?>')">$40</button>
-                <button type="button" class="btn btn-bets" onClick="calcScore(20, 'A', time, '<?php echo $answer?>')">$20</button>
+
+<form action="game.php" method="post">
+<input type="hidden" name="page" value="1">
+              <div id='refAButton' class='col-md-2 btn-group-vertical' role='group' aria-label='refAButtons'>
+                <button type="submit" name='choice' value=1 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                <button type="submit" name='choice' value=2 formmethod="post" formaction="game.php" class="btn btn-default">$80</button>
+                <button type="submit" name='choice' value=3 formmethod="post" formaction="game.php" class="btn btn-default">$60</button>
+                <button type="submit" name='choice' value=4 formmethod="post" formaction="game.php" class="btn btn-default">$20</button>
+                <button type="submit" name='choice' value=5 formmethod="post" formaction="game.php" class="btn btn-default">$10</button>
               </div>
-              </div>
+
+</form>
             </div>
 
             <div id='pass' class='row'>
+              <form action="game.php" method="post">
               <div class='col-md-10'></div>
-              <div id='passButton' class='col-md-2'>
-              <div class='btn-group-vertical' role='group' aria-label='passButtons'>
-                <button type="button" class="btn btn-pass" onClick="calcScore(0, 'Pass', time, '<?php echo $answer?>')">Pass</button>
+              <div id='passButton' class='col-md-2 btn-group-vertical' role='group' aria-label='passButtons'>
+                <button type="submit" name='choice' value=6 formmethod="post" formaction="game.php" class="btn btn-default">PASS</button>
               </div>
-              </div>
+            </form>
             </div>
 
             <div id='refB' class='row'>
               <div id='refBImage' class='col-md-10'>
                 <img src='<?php getname($Record, "R2_FileName"); ?>.jpg' class="img-responsive">
               </div>
-
+    <form action="game.php" method="post">
               <div id='refBButton' class='col-md-2'>
                 <div class='btn-group-vertical' role='group' aria-label='refBButtons'>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(100, 'B', time, '<?php echo $answer?>')">$100</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(80, 'B', time, '<?php echo $answer?>')">$80</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(60, 'B', time, '<?php echo $answer?>')">$60</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(40, 'B', time, '<?php echo $answer?>')">$40</button>
-                  <button type="button" class="btn btn-bets" onClick="calcScore(20, 'B', time,'<?php echo $answer?>')">$20</button>
+                  <button type="submit" name='choice' value=7 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                  <button type="submit" name='choice' value=8 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                  <button type="submit" name='choice' value=9 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                  <button type="submit" name='choice' value=10 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
+                  <button type="submit" name='choice' value=11 formmethod="post" formaction="game.php" class="btn btn-default">$100</button>
                 </div>
               </div>
+    </form>
             </div>
-
           </div>
-          
-          <div class='col-md-1'></div>
-      </div>
-
 
       <div id='avatar' class='row'>
         <div class='col-md-2'></div>
         <div class='panel panel-default col-md-8'>
           <div class="panel-body">
-            <p>Name: <?php getUser($user, 'Name'); ?> </p>
-              <p><?php getUser($user, 'Score'); ?></p>
-              <p><?php getUser($user, 'Items'); ?></p>
-              <p><?php getUser($user, 'Level'); ?></p>
+              <p>user info here</p>
           </div>
         </div>
         <div class='col-md-2'></div>
@@ -126,32 +121,6 @@
     var time  = clock.getTime(); 
 
   function calcScore(points, response, time, answer, user) {
-    var ajaxRequest;
-
-    try{
-    // Opera 8.0+, Firefox, Safari
-    ajaxRequest = new XMLHttpRequest();
-  } catch (e){
-    // Internet Explorer Browsers
-    try{
-      ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-    } catch (e) {
-      try{
-        ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-      } catch (e){
-        // Something went wrong
-        alert("Your browser broke!");
-        return false;
-      }
-    }
-  }
-  // Create a function that will receive data sent from the server
-  ajaxRequest.onreadystatechange = function(){
-    if(ajaxRequest.readyState == 4){
-      //document.myForm.time.value = ajaxRequest.responseText;
-    }
-  }
-
     if (response == answer) {
     var score = 1*points*time;
   } else if (response != answer) {
@@ -160,8 +129,7 @@
     var score = 0;
   }
   
-  ajaxRequest.open("GET", "dbUpdate.php" + "?score=" + score + "&user='" + user, true);
-  ajaxRequest.send(null); 
+  
 }
 </script>
 
