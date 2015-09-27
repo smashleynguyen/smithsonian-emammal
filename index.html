@@ -22,22 +22,26 @@
           <div class="col-md-4">
                 <h2 class="country">North America</h2>
                   <a href="game.php">
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <form action="game.php" method="get">
+                      <input type="hidden" name="page" value="1">
+                      <input type="hidden" name="score" value="0">
+                      <input type="hidden" name="answer" value="1">
+                    <button type="submit" name="choice" value="0" class="btn btn-default" aria-label="Left Align">
                       <div class="image">
                         <img src="images/US2.gif" alt="North America" height="300px" width="300px">
                         <h1 class="us-peru"><span>0%<span class='spacer'></span></span></h1>
                       </div>
                     </button>
+                  </form>
                   </a>
           </div>
           <div class="col-md-4">
             <h2>Are all animals the same?</h2>
-                <br>
-                  <p>As you may have guessed, the answer is no. Each animal is a different species. In fact, there are 8.7 million species of animals around the world! Some of them might be in your own backyard.</p>
-                <br>
-                  <p>But it's important that we're able to tell the difference between species of animals.</p>
-                <br>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget felis vel felis finibus efficitur sit amet ac ex. Integer sit amet turpis quis enim pharetra euismod quis at nulla. Integer aliquam viverra massa sodales porttitor. Nullam sapien tortor, aliquam nec sodales ac, sodales vulputate tortor. Morbi mollis tortor eu leo tempus sagittis. Suspendisse id tristique elit, in placerat risus. Curabitur euismod, neque eget sodales tempus, magna metus aliquam leo, sed faucibus enim leo at sapien.</p>
+                  <p class="instructions">As you may have guessed, the answer is no. Each animal is a different species. In fact, there are 8.7 million species of animals around the world! Some of them might even be in your own backyard.</p>
+                  <p class="instructions">See how well you can tell the difference between species by playing<b> Spot or Not!</b></p>
+                <a href="avatar.html">
+                  <button type="button" class="btn btn-start"><h3 class="get-started">Get started!</h3></button>
+                </a>
           </div>
           <div class="col-md-4">
             <h2 class="country">Peru</h2>
@@ -87,7 +91,9 @@
   </body>
   <footer>
     <div class="logo2">
-      <img src="images/emammal_LOGO_original.png" alt="emammal" height="100" width="170">
+      <a href="http://emammal.si.edu/">
+        <img src="images/emammal_LOGO_original.png" alt="emammal" height="100" width="170">
+      </a>
     </div>
     <p class="footer-text"><a href="http://emammal.si.edu/">eMammal | See wildlife. Do science.</a></p>
   </footer>

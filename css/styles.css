@@ -58,6 +58,11 @@ main {
   padding-bottom: 10px;
 }
 
+.btn-start {
+  background-color: #f7b669;
+  border-color: black;
+}
+
 section {
   width: 100%;
   text-align: center;
@@ -74,6 +79,11 @@ h1 {
    left: 0;
    width: 100%;
    font-size: 60px;
+}
+
+.instructions {
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .india {
@@ -156,6 +166,7 @@ h3 {
   font-size: 25px;
   padding-bottom: 10px;
 }
+
 
 h4 {
   font-weight: 500px;
@@ -258,6 +269,20 @@ h4 {
   width:500px;
 }
 
+.btn-primary {
+  background-color: #f6c994;
+  color: black;
+  border-color: black;
+}
+
+.btn-bet {
+  background-color: #f0987c;
+  color: black;
+  border-color: black;
+  text-shadow: none;
+  font-size: 24px;
+}
+
 
 .container .info {
     position:absolute;
@@ -268,8 +293,9 @@ h4 {
 }
 
 #refBButton, #refAButton {
-  float:right;
-  padding-top: 20px;
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-right: 20px;
 }
 
@@ -283,17 +309,25 @@ h4 {
 
 .game-avatar {
   float: left;
+  padding-left: 20px;
+}
+
+.avatar-name {
+  text-align: left;
 }
 
 .col-xs-4 {
-  width: 28%;
-  text-align: center;
+  width: 26%;
+  /*text-align: center;*/
 }
 
 .button-decoration {
   padding: 5px;
 }
 
+a.button:hover{
+     background-color: #f7b669;
+}
 
 
 footer {
